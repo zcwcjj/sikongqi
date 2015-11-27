@@ -1,0 +1,11 @@
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\sikongqi.exe.config
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\sikongqi.exe
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\sikongqi.pdb
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\obj\Debug\sikongqi.Form1.resources
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\obj\Debug\sikongqi.Properties.Resources.resources
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\obj\Debug\sikongqi.csproj.GenerateResource.Cache
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\obj\Debug\sikongqi.exe
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\obj\Debug\sikongqi.pdb
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\EntityFramework.dll
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\EntityFramework.xml
+C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\zh-Hans\EntityFramework.resources.dll

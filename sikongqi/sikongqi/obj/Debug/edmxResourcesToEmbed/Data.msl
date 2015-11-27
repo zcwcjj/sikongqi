@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tttModelStoreContainer" CdmEntityContainer="tttEntities">
+    <EntitySetMapping Name="sikongqi">
+      <EntityTypeMapping TypeName="tttModel.sikongqi">
+        <MappingFragment StoreEntitySet="sikongqi">
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="operator" ColumnName="operator" />
+          <ScalarProperty Name="planNumber" ColumnName="planNumber" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="finalNumber" ColumnName="finalNumber" />
+          <ScalarProperty Name="wrongTime" ColumnName="wrongTime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
