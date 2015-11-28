@@ -19,9 +19,9 @@ namespace sikongqi
         const string VB30ITEM = "sikongqi1.plc200.vb30";
         const string VB80ITEM = "sikongqi1.plc200.vb80";
         const string I04_I15 = "sikongqi1.plc200.input";
-        const string START = "";
-        const string RESET = "";
-        const string PAUSE = "";
+        const string START = "sikongqi1.plc200.start";
+        const string RESET = "sikongqi1.plc200.reset";
+        const string PAUSE = "sikongqi1.plc200.pause";
         int vb30;
         int vb80;
         int start;
@@ -47,14 +47,17 @@ namespace sikongqi
         tttEntities dbcontex;
         sikongqi exp;
 
-
+        BackgroundWorker backgroundworker1 = new BackgroundWorker();
 
         public Form1()
         {
             InitializeComponent();
             init();
             
+            
         }
+
+       
 
         void init()
         {
@@ -93,6 +96,10 @@ namespace sikongqi
             CommandGroup.UpdateRate = 10;
             #endregion
 
+            toolStripProgressBar1.Step = 1;
+            toolStripProgressBar1.Maximum = 19;
+            
+
 
         }
 
@@ -109,24 +116,30 @@ namespace sikongqi
         void CommandGroup_DataChange(int TransactionID, int NumItems, ref Array ClientHandles, ref Array ItemValues, ref Array Qualities, ref Array TimeStamps)
         {
             //关闭检测
-            CommandGroup.IsSubscribed = false;
+          //  CommandGroup.IsSubscribed = false;
+           // if (ClientHandles.Length > 1) return;
 
             for (int i = 1; i < ClientHandles.Length + 1; i++)
             {
                 object index1 = ClientHandles.GetValue(i);
                 object index2 = ItemValues.GetValue(i);
-                int temp = Int32.Parse(index2.ToString());
-                if (temp == 1)
+                
+                
+                
+                if (((bool) index2))
                 {
                     switch (Int32.Parse(index1.ToString()))
                     {
                         ///start pushed.
                         case 1:
                             {
-
+                                
                                 setCommandStates(1, 0, 0);
+                                toolStripLabelCommand.Text = "实验进行中";
+                                
                                 exp = new sikongqi();
                                 exp.startTime = DateTime.Now;
+                                textBoxStartTime.Text = exp.startTime.ToString();
                                 exp.planNumber = 100;
 
 
@@ -138,6 +151,7 @@ namespace sikongqi
                         case 2:
                             {
                                 setCommandStates(0, 0, 1);
+                                toolStripLabelCommand.Text = "实验暂停";
                                 break;
                             }
 
@@ -145,6 +159,7 @@ namespace sikongqi
                         case 3:
                             {
                                 setCommandStates(0, 1, 0);
+                                toolStripLabelCommand.Text = "实验重置";
                                 break;
                             }
                     }
@@ -153,7 +168,7 @@ namespace sikongqi
             }
 
             //打开订阅
-            CommandGroup.IsSubscribed = true;
+          //  CommandGroup.IsSubscribed = true;
             
         }
 
@@ -166,7 +181,7 @@ namespace sikongqi
                 flag++;
             if (Ppause == 1)
                 flag++;
-            if (flag >= 1)
+            if (flag > 1)
             {
                 MessageBox.Show("setting wriong");
                 return;
@@ -175,6 +190,7 @@ namespace sikongqi
             this.start = Pstart;
             this.reset = Preset;
             this.pause = Ppause;
+            
  
         }
         /// <summary>
@@ -193,8 +209,11 @@ namespace sikongqi
                 object index1 = ClientHandles.GetValue(i);
                 object index2 = ItemValues.GetValue(i);
 
-                if (  Int32.Parse( index1.ToString()) == 1)
-                    textBox3.Text = index2.ToString();
+                if (Int32.Parse(index1.ToString()) == 1) 
+                {
+                    toolStripProgressBar1.Value = Int32.Parse(index2.ToString());
+                }
+                    
                
             }
             
@@ -217,9 +236,11 @@ namespace sikongqi
                 object index2 = ItemValues.GetValue(i);
 
                 if (Int32.Parse(index1.ToString()) == 1)
-                    textBox1.Text = index2.ToString();
-                else if (Int32.Parse(index1.ToString()) == 2)
-                    textBox2.Text = index2.ToString();
+                {
+                    toolStripProgressBar1.Value = Int32.Parse(index2.ToString());
+                }
+                    
+                   
             }
             
         }

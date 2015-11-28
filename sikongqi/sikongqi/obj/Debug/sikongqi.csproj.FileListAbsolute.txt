@@ -12,7 +12,6 @@ C:\Users\Administrator.zhang-PC\Documents\Axure\sikongqi\sikongqi\bin\Debug\zh-H
 F:\sikongqi\sikongqi\sikongqi\bin\Debug\sikongqi.exe.config
 F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.exe
 F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.pdb
-F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.csprojResolveAssemblyReference.cache
 F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.Form1.resources
 F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.Properties.Resources.resources
 F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.csproj.GenerateResource.Cache
