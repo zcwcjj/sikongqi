@@ -37,12 +37,12 @@
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelCommand = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxStartTime = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +121,11 @@
             this.toolStripLabelCommand.Text = "等待实验";
             this.toolStripLabelCommand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -168,13 +173,8 @@
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Location = new System.Drawing.Point(66, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 266);
+            this.panel1.Size = new System.Drawing.Size(373, 358);
             this.panel1.TabIndex = 14;
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
             // 
             // Form1
             // 

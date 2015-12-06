@@ -20,3 +20,4 @@ F:\sikongqi\sikongqi\sikongqi\bin\Debug\sikongqi.pdb
 F:\sikongqi\sikongqi\sikongqi\bin\Debug\EntityFramework.dll
 F:\sikongqi\sikongqi\sikongqi\bin\Debug\EntityFramework.xml
 F:\sikongqi\sikongqi\sikongqi\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.csprojResolveAssemblyReference.cache

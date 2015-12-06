@@ -27,6 +27,7 @@ namespace sikongqi
         int start;
         int reset;
         int pause;
+        int status = 0;
         
 
 
@@ -55,6 +56,7 @@ namespace sikongqi
             init();
             
             
+            
         }
 
        
@@ -77,13 +79,13 @@ namespace sikongqi
             CommandGroup.OPCItems.AddItem(RESET, 3);
 
             statusGroup.DataChange += statusGroup_DataChange;
-            resultGroup.DataChange += resultGroup_DataChange;
+            //resultGroup.DataChange += resultGroup_DataChange;
             CommandGroup.DataChange += CommandGroup_DataChange;
             
             #region 
          
             statusGroup.IsSubscribed = true;
-            resultGroup.IsSubscribed = true;
+            //resultGroup.IsSubscribed = true;
             CommandGroup.IsSubscribed = true;
             resultGroup.IsActive = true;
             statusGroup.IsActive = true;
@@ -172,6 +174,7 @@ namespace sikongqi
             
         }
 
+        //设置开始暂停重置状态
         void setCommandStates(int Pstart, int Preset, int Ppause)
         {
             int flag = 0;
@@ -194,7 +197,7 @@ namespace sikongqi
  
         }
         /// <summary>
-        /// 
+        /// 查看结果
         /// </summary>
         /// <param name="TransactionID"></param>
         /// <param name="NumItems"></param>
@@ -237,7 +240,15 @@ namespace sikongqi
 
                 if (Int32.Parse(index1.ToString()) == 1)
                 {
-                    toolStripProgressBar1.Value = Int32.Parse(index2.ToString());
+                    int statusnow =Int32.Parse(index2.ToString());
+                    toolStripProgressBar1.Value = statusnow;
+                    
+                    
+
+
+                    if (statusnow == (status + 1))
+                    { }
+
                 }
                     
                    
@@ -266,6 +277,19 @@ namespace sikongqi
         void pauserExp()
         { }
 
+       uint readResult()
+        {
+            
+            object   value;
+           
+           
+            
+            object quality,timestamaps;
+            resultGroup.OPCItems.Item(1).Read(1, out value, out quality, out timestamaps);
+           return (uint) value & 0xFFFF;
+            //resultGroup.SyncRead(1, 1,ref serverhandle, out value, out error, out quality, out timestamaps);
+
+        }
     
 
     }
