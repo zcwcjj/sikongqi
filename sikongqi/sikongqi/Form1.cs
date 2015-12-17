@@ -22,6 +22,8 @@ namespace sikongqi
         const string START = "sikongqi1.plc200.start";
         const string RESET = "sikongqi1.plc200.reset";
         const string PAUSE = "sikongqi1.plc200.pause";
+        const int ENDCIRCLE = 19;
+        const uint[] CHECKSTATUS = new uint[ENDCIRCLE] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
         int vb30;
         int vb80;
         int start;
@@ -186,8 +188,9 @@ namespace sikongqi
                 flag++;
             if (flag > 1)
             {
-                MessageBox.Show("setting wriong");
-                return;
+                throw(new Exception("命令冲突！"));
+                //MessageBox.Show("setting wriong");
+               // return;
             }
 
             this.start = Pstart;
@@ -237,17 +240,40 @@ namespace sikongqi
             {
                 object index1 = ClientHandles.GetValue(i);
                 object index2 = ItemValues.GetValue(i);
-
+                //如果是1号位置,VB30
                 if (Int32.Parse(index1.ToString()) == 1)
                 {
+                    
                     int statusnow =Int32.Parse(index2.ToString());
+                    uint result = 0xfffff ;
+                    
+                    
+
+                    //确保状态周期循环
+                    if (statusnow == (status + 1)%ENDCIRCLE  )
+                    {
+                        //判断相等 ,注意-1错误
+                        if ( (result = readResult()) == CHECKSTATUS[statusnow - 1])
+                        {
+                            //更新状态
+                            status = statusnow;
+
+                        }
+                        else
+                        {
+                            logExp();
+                            
+ 
+                        }
+
+                        
+
+                       
+ 
+                    }
+                    
+                    //更新UI
                     toolStripProgressBar1.Value = statusnow;
-                    
-                    
-
-
-                    if (statusnow == (status + 1))
-                    { }
 
                 }
                     
@@ -275,6 +301,8 @@ namespace sikongqi
         { }
 
         void pauserExp()
+        { }
+        void logExp()
         { }
 
        uint readResult()
