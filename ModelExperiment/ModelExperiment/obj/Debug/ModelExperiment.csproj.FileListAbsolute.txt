@@ -1,0 +1,8 @@
+F:\sikongqi\ModelExperiment\ModelExperiment\bin\Debug\ModelExperiment.exe.config
+F:\sikongqi\ModelExperiment\ModelExperiment\bin\Debug\ModelExperiment.exe
+F:\sikongqi\ModelExperiment\ModelExperiment\bin\Debug\ModelExperiment.pdb
+F:\sikongqi\ModelExperiment\ModelExperiment\obj\Debug\ModelExperiment.csprojResolveAssemblyReference.cache
+F:\sikongqi\ModelExperiment\ModelExperiment\obj\Debug\ModelExperiment.Properties.Resources.resources
+F:\sikongqi\ModelExperiment\ModelExperiment\obj\Debug\ModelExperiment.csproj.GenerateResource.Cache
+F:\sikongqi\ModelExperiment\ModelExperiment\obj\Debug\ModelExperiment.exe
+F:\sikongqi\ModelExperiment\ModelExperiment\obj\Debug\ModelExperiment.pdb
