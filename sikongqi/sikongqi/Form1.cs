@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OPCAutomation;
+using System.Threading;
 
 namespace sikongqi
 {
@@ -56,11 +57,12 @@ namespace sikongqi
         {
             InitializeComponent();
             init();
+           // ParameterizedThreadStart x =new ParameterizedThreadStart(f);
             
             
             
         }
-
+        void f(object a){}
        
 
         void init()
@@ -252,6 +254,8 @@ namespace sikongqi
                     //确保状态周期循环
                     if (statusnow == (status + 1)%ENDCIRCLE  )
                     {
+                        
+
                         //判断相等 ,注意-1错误
                         if ( (result = readResult()) == CHECKSTATUS[statusnow - 1])
                         {

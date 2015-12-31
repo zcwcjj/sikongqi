@@ -21,3 +21,6 @@ F:\sikongqi\sikongqi\sikongqi\bin\Debug\EntityFramework.dll
 F:\sikongqi\sikongqi\sikongqi\bin\Debug\EntityFramework.xml
 F:\sikongqi\sikongqi\sikongqi\bin\Debug\zh-Hans\EntityFramework.resources.dll
 F:\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.csprojResolveAssemblyReference.cache
+F:\sikongqi\sikongqi\sikongqi\sikongqi\bin\Debug\sikongqi.exe.config
+F:\sikongqi\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.exe
+F:\sikongqi\sikongqi\sikongqi\sikongqi\obj\Debug\sikongqi.pdb
